@@ -17,13 +17,13 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*; \
 # Set up all three config locations
     mkdir -p /root/.config/Red-DiscordBot; \
-    ln -s /data/config.json /root/.config/Red-DiscordBot/config.json; \
+    ln -s /home/container/config.json /root/.config/Red-DiscordBot/config.json; \
     mkdir -p /usr/local/share/Red-DiscordBot; \
-    ln -s /data/config.json /usr/local/share/Red-DiscordBot/config.json; \
+    ln -s /home/container/config.json /usr/local/share/Red-DiscordBot/config.json; \
     mkdir -p /config/.config/Red-DiscordBot; \
-    ln -s /data/config.json /config/.config/Red-DiscordBot/config.json;
+    ln -s /home/container/config.json /config/.config/Red-DiscordBot/config.json;
 
-VOLUME /data
+VOLUME /home/container
 
 ENV SODIUM_INSTALL system
 
