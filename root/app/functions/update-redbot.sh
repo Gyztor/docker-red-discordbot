@@ -6,7 +6,7 @@ set -euf
 
 # Determine if we need SetupTools Extras
 if [ -z "${STORAGE_TYPE:-}" ]; then
-    STORAGE_TYPE=$(jq -r .docker.STORAGE_TYPE /data/config.json | tr '[:upper:]' '[:lower:]')
+    STORAGE_TYPE=$(jq -r .docker.STORAGE_TYPE /home/container/config.json | tr '[:upper:]' '[:lower:]')
 fi
 SETUPTOOLS_EXTRAS=""
 if [ "${STORAGE_TYPE}" != "json" ]; then
